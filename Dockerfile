@@ -1,4 +1,2 @@
-FROM debian:8
-RUN apt update && apt install -y clang sudo gdb valgrind tree vim strace libc++abi-dev make
-ADD CMake-3.8.0.tar.gz /tmp/
-RUN cd /tmp/CMake-3.8.0 && ./configure && make -j8 && make install && cd / && rm -rf /tmp/CMake-3.8.0
+FROM debian:9
+RUN apt update && apt install -y sudo gdb valgrind tree vim strace libc++abi-dev cmake clang clang-3.9 libclang-common-3.9-dev libclang1-3.9 libllvm3.9 llvm-3.9 llvm-3.9-dev llvm-3.9-runtime
